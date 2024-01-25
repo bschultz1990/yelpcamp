@@ -22,7 +22,7 @@ app.get('/campgrounds', async (req, res) => {
   res.render('campgrounds/index', { campgrounds })
 })
 
-app.get('/campgrounds:id', async (req, res) => {
+app.get('/campgrounds/:id', async (req, res) => {
   res.render('campgrounds/show')
 })
 
