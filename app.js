@@ -53,6 +53,14 @@ app.put('/campgrounds/:id', async (req, res) => {
   res.redirect(`/campgrounds/${campground._id}`)
 })
 
+app.delete('/campgrounds/:id', async (req, res) => {
+  const { id } = req.params;
+  // Add functionality to delete more stuff here later.
+  // For now, just delete the whole object.
+  await Campground.findByIdAndDelete(id);
+  res.redirect('/campgrounds')
+})
+
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 app.set('view engine', 'ejs');
